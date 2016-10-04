@@ -6,7 +6,7 @@ d = {}
 with open('0004.txt', 'r') as f:
 	for line in f.readlines():
 		for word in line.split():
-			if re.match(r'^[a-zA-Z]+$',word):
+			if re.match(r'^[a-zA-Z]+[.:?]?$',word):
 				if word.lower() in d:
 					d[word.lower()] = d[word.lower()] + 1
 				else:
