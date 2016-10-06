@@ -4,16 +4,19 @@ logging.basicConfig(level=logging.INFO)
 import os
 from PIL import Image
 
+iphone_weight = 1360
+iphone_height = 640
+
 for pic in os.listdir('.'):
 	if pic[-1] == 'g':
 		img = Image.open(os.path.join(os.path.abspath('.'), pic))
-		if img.width > 1360:
-			img.resize((1360, img.width*640//1360))
+		if img.width > iphone_weight:
+			img.resize((iphone_weight, img.width*iphone_height//iphone_weight))
 			path = os.path.join(os.path.abspath('.'), 'resize_' + pic)
 			img.save(path)
 			logging.info('resize new pic: %s' % path)
-		elif img.height > 640:
-			img.resize((img.height*1360//640, 640))
+		elif img.height > iphone_height:
+			img.resize((img.height*iphone_weight//iphone_height, iphone_height))
 			path = os.path.join(os.path.abspath('.'), 'resize_' + pic)
 			img.save(path)
 			logging.info('resize new pic: %s' % path)
