@@ -42,8 +42,19 @@ def init_db():
 		db.cursor().executescript(f.read())
 	db.commit()
 
+<<<<<<< HEAD
 @app.cli.command('initdb')
 def initdb_command():
 	init_db()
 	print('Initialized the database.')
+=======
+@app.route('/', methods=['GET', 'POST'])
+def liuyan():
+	if request.method == 'POST':
+		username = request.form['username']
+		message = request.form['message']
+		return render_template('liuyan.html', username=username, message=message)
+	else:
+		return render_template('liuyan.html')
+>>>>>>> 1ca06170ed5957aa38bada7006673f3e8b6bd341
 

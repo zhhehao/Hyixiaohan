@@ -8,8 +8,12 @@ h1.title{
 	vertical-align: middle;
 }
 div.form{
-	width: 1000px;
-	height: 240px;
+	width: 970px;
+	height: 180px;
 	background-color: #87CEFA;
 	padding-left: 30px;
 }
+div.content{
+	padding-left: 30px;
+}
+

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>留言簿</title>
-	<link rel="stylesheet" type="text/css" href="liuyan.css" />
+	<link rel="stylesheet" type="text/css" href="static/liuyan.css" />
 </head>
 <body>
 	<div class="head">
@@ -11,11 +11,20 @@
 		<h1 class="title">留言簿</h1>
 	</div>
 	<div class="form">
-		<br />
-		<legend>请尽情留言吧：</legend>
-		<p>姓名<input name="username" placeholder="Your name" value="{{ username }}"></p>
-		<p>内容<input name="message" placeholder="Your message" value="{{ message }}"></p>
-		<p><button type="submit">提交</button></p>
+		<form action="/" method="post">
+			<br />
+			<legend>请尽情留言吧：</legend>
+			<p>姓名<input name="username" placeholder="Your name" value="{{ username }}"></p>
+			<p>内容<textarea name="message" placeholder="Your message" value="{{ message }} rows="4" cols="40"></textarea></p>
+			<p><button type="submit">提交</button></p>
+		</form>
+	</div>
+	<div class="content">
+		<h4>留言历史信息</h4>
+		{% if message %}
+			<p>{{ username }}</p>
+			<p>{{ message }}</p>
+		{% endif %}
 	</div>
 </body>
 </html>
