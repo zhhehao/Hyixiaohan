@@ -47,4 +47,21 @@ def initdb_command():
 	init_db()
 	print('Initialized the database.')
 
+# Show entries
+@app.route('/')
+def show_entries():
+	db = get_db()
+	cur = db.execute('select title, date, text from entries order by id desc')
+	entries = cur.fetchall()
+	return render_template('show_entries.html', entries=entries)
+
+# Add entry
+@app.route('/add', methods=['POST'])
+def add_entry():
+	submit_time = str(datetime.now())
+	db = get_db()
+	db.execute('insert into entries (title, date, text) values (?, ?, ?)', \
+		[request.form['title'], submit_time, request.form['text']])
+	db.commit()
+	return redirect(url_for('show_entries'))
 
