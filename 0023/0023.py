@@ -58,7 +58,7 @@ def show_entries():
 # Add entry
 @app.route('/add', methods=['POST'])
 def add_entry():
-	submit_time = str(datetime.now())
+	submit_time = str(datetime.datetime.now())
 	db = get_db()
 	db.execute('insert into entries (title, date, text) values (?, ?, ?)', \
 		[request.form['title'], submit_time, request.form['text']])

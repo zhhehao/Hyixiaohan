@@ -1,0 +1,12 @@
+{% extends "layout.html"%}
+{% block body %}
+<div class="message">
+	<h3>留言历史信息</h3>
+</div>
+{% for entry in entries%}
+	<p>{{ entry.title }} 留言于 ({{ entry.date }}:)</p>
+	<p class="entry">{{ entry.text|safe }}</p>
+{% else %}
+	<p class="entry">一条留言都没有...</p>
+{% endfor%}
+{% endblock %}

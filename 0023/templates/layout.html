@@ -1,0 +1,29 @@
+<!doctype html>
+<title>留言簿</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<div class="header">
+	<br />
+	<h1>留言簿</h1>
+</div>
+<div class="form">
+	<p>请尽情留言吧:</p>
+	<form action="{{ url_for('add_entry') }}" method="post" accept-charset="utf-8">
+		<table border="0px">
+			<tbody>
+				<tr>
+					<td>姓名</td>
+					<td><input type="text" name="title" placeholder="Your name here."></td>
+				</tr>
+				<tr>
+					<td>内容</td>
+					<td><textarea type="text" name="text" placeholder="Your message here." rows="4" cols="40"></textarea></td>
+				</tr>
+			</tbody>
+		</table>
+		<p><input type="submit" value="提交"></p>
+	</form>
+</div>
+{% block body %}{% endblock %}
+<div class="footer">
+
+</div>
