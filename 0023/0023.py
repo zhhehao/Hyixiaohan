@@ -4,7 +4,7 @@
 import os
 import sqlite3
 from flask import Flask, request, g, redirect, url_for, render_template
-from datatime import datetime
+import datetime
 
 # Create flask instance
 app = Flask(__name__)
