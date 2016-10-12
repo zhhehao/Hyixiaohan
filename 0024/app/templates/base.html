@@ -7,9 +7,23 @@
 <body>
 <div class="title">
 	<span><b>QuickStart示例</b></span>--TodoList应用演示
-	<select>
-		<option value="">{{user.nickname}}</option>
+	<select class="selectuser">
+		<option value="optionuser">{{user.nickname}}</option>
 	</select>
+</div>
+<div>
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		<ul>
+			{% for message in messages %}
+			<li class="flashes">{{ message }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endwith %}
+</div>
+<div class="search">
+	<span>名称:<input type="text" name="search"></span>
 </div>
 {% block content %}{% endblock %}
 </body>

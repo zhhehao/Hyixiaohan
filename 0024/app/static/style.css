@@ -2,6 +2,24 @@ div.title {
 	font-size: 1.2em;
 	color: OliveDrab;
 }
-div.title span{
+div.title span {
 	font-size: 1.5em;
+}
+li.flashes {
+	list-style-type: none;
+	width: 800px;
+	height: 30px;
+	background-color: PaleGreen;
+	position: absolute;
+	left: 10px;
+	border-radius: 4px;
+	padding-left: 10px;
+	padding-top: 7px;
+}
+.selectuser {
+	position: absolute;
+	left: 730px;
+	top: 20px;
+	width: 80px;
+	height: 30px;
 }
